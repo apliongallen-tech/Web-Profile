@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Personal Web Portfolio - Allen </title>
+  <meta name="description" content="Personal portfolio showcasing projects, skills, education and contact information." />
+  <style>
+    :root{
+      --bg:#0f1724; --card:#0b1220; --muted:#9aa4b2; --accent:#35a7ff; --glass: rgba(255,255,255,0.04);
+      --radius:14px; --maxw:1100px; --gap:18px;
+      --ff: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;}
+    body{
+      margin:0; font-family:var(--ff); background:linear-gradient(180deg,#071027 0%, #081426 100%); color:#e6eef6;
+      -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; line-height:1.45;
+      padding:40px 20px; display:flex; justify-content:center; align-items:flex-start;
+    }
+    .wrap{width:100%; max-width:var(--maxw);} 
+    header{display:flex; align-items:center; justify-content:space-between; gap:16px; margin-bottom:28px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:52px;height:52px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#7de9ff);display:grid;place-items:center;color:#072035;font-weight:700}
+    nav a{color:var(--muted);text-decoration:none;margin-left:16px;font-weight:600;font-size:14px}
+    nav a:hover{color:var(--accent)}
+
+    .grid{display:grid;grid-template-columns:1fr 360px; gap:var(--gap)}
+    @media (max-width:900px){.grid{grid-template-columns:1fr;}.wrap{padding-bottom:60px}}
+
+    /* Card */
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border-radius:var(--radius); padding:22px; box-shadow:0 8px 30px rgba(2,6,23,0.6);}
+
+    /* Hero */
+    .hero{display:flex;gap:18px;align-items:center}
+    .hero-left h1{margin:0;font-size:28px}
+    .tag{color:var(--accent);font-weight:700}
+    .hero p{color:var(--muted);margin-top:8px}
+    .cta{margin-top:16px;display:flex;gap:12px}
+    .btn{background:var(--accent);color:#042235;padding:10px 14px;border-radius:10px;border:none;font-weight:700;cursor:pointer}
+    .btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)}
+
+    /* About */
+    .about{display:flex;gap:18px;margin-top:18px}
+    .avatar{width:128px;height:128px;border-radius:12px;background:linear-gradient(135deg,#0b1220,#06203a);display:grid;place-items:center;font-weight:700;color:var(--muted);overflow:hidden}
+    .avatar img{width:100%;height:100%;object-fit:cover;display:block;border-radius:12px}
+
+    /* Skills */
+    .skills{display:flex;flex-wrap:wrap;gap:12px;margin-top:12px}
+    .skill{background:var(--glass);padding:8px 12px;border-radius:10px;color:var(--muted);font-weight:600}
+
+    /* Projects */
+    .projects{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:12px}
+    @media (max-width:700px){.projects{grid-template-columns:1fr}}
+    .project{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:12px;border-radius:12px}
+    .project img{width:100%;height:140px;object-fit:cover;border-radius:8px}
+    .meta{display:flex;justify-content:space-between;align-items:center;margin-top:8px}
+
+    /* Side column */
+    .side{position:sticky;top:28px}
+    .stats{display:flex;gap:12px;margin-bottom:12px}
+    .stat{flex:1;background:var(--card);padding:12px;border-radius:12px;text-align:center}
+    .stat strong{display:block;font-size:18px}
+    .edu{margin-top:12px}
+
+    /* Contact */
+    form{display:grid;gap:10px}
+    input,textarea{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:10px;border-radius:8px;color:var(--muted);outline:none}
+    textarea{min-height:120px;resize:vertical}
+
+    footer{margin-top:20px;color:var(--muted);text-align:center;font-size:13px}
+
+    /* tiny utilities */
+    .muted{color:var(--muted)}
+    .project-title{font-weight:700}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo">CQ</div>
+        <div>
+          <div style="font-weight:800">Allen Paul Apliong</div>
+          <div class="muted" style="font-size:12px">IT Student • Future Developer</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main class="grid">
+      <section>
+        <div class="card hero">
+          <div class="hero-left">
+            <h1>Hello — I'm <span class="tag">Allen</span></h1>
+            <p>IT student focused on web development, networking, and solving real problems through code. I build responsive websites and tinkering projects that aim for clarity, performance and accessibility.</p>
+            <div class="cta">
+              <a class="btn" href="#projects">View My Work</a>
+              <a class="btn ghost" href="#contact">Get in Touch</a>
+            </div>
+
+            <div class="about">
+              <div class="avatar"><img src="images/logo.svg" alt="Avatar logo"></div>
+              <div>
+                <p class="muted">I’m currently studying IT and actively building projects to sharpen my skills in front-end development, basic backend, and networking. I enjoy learning new frameworks and optimizing user experience.</p>
+                <div class="skills" aria-label="skills list">
+                  <div class="skill">HTML</div>
+                  <div class="skill">CSS</div>
+                  <div class="skill">JavaScript</div>
+                  <div class="skill">Python</div>
+                  <div class="skill">Networking</div>
+                  <div class="skill">Troubleshooting</div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div id="projects" class="card" style="margin-top:18px">
+          <h3 style="margin:0">Projects</h3>
+          <p class="muted" style="margin-top:6px">Selected projects with descriptions and links.</p>
+
+          <div class="projects">
+            <article class="project">
+              <img src="https://picsum.photos/seed/p1/800/400" alt="Project 1 screenshot">
+              <div class="meta">
+                <div>
+                  <div class="project-title">Portfolio Website</div>
+                  <div class="muted" style="font-size:13px">A responsive single-page portfolio built with HTML/CSS and a bit of JS.</div>
+                </div>
+                <div>
+                  <a class="btn" href="#">Demo</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="project">
+              <img src="https://picsum.photos/seed/p4/800/400" alt="Project 4 screenshot">
+              <div class="meta">
+                <div>
+                  <div class="project-title">Mini E‑commerce UI</div>
+                  <div class="muted" style="font-size:13px">Front-end mockup of a simple product listing and cart experience.</div>
+                </div>
+                <div>
+                  <a class="btn" href="#">Preview</a>
+                </div>
+              </div>
+            </article>
+
+          </div>
+        </div>
+
+      </section>
+
+      <aside class="side">
+        <div class="card">
+          <div class="stats">
+            <div class="stat">
+              <strong>45+</strong>
+              <div class="muted" style="font-size:13px">Projects & Exercises</div>
+            </div>
+            <div class="stat">
+              <strong>3</strong>
+              <div class="muted" style="font-size:13px">Years Learning</div>
+            </div>
+          </div>
+
+          <div style="margin-top:8px">
+            <h4 style="margin:0">Contact</h4>
+            <div class="muted" style="margin-top:6px;font-size:13px">Prefer email? Send a message below or reach me on:</div>
+            <div style="display:flex;gap:10px;margin-top:10px">
+              <a class="btn ghost" href="#">LinkedIn</a>
+              <a class="btn ghost" href="#">GitHub</a>
+            </div>
+
+            <div id="contact" style="margin-top:12px">
+              <form onsubmit="submitContact(event)">
+                <input id="name" placeholder="Your name" required>
+                <input id="email" type="email" placeholder="Email" required>
+                <textarea id="message" placeholder="Message" required></textarea>
+                <button class="btn" type="submit">Send Message</button>
+              </form>
+              <div id="note" class="muted" style="margin-top:8px;font-size:13px">(The contact form demo doesn't actually send email.)</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:12px">
+          <h4 style="margin:0">Skills Breakdown</h4>
+          <div style="margin-top:8px" class="muted">
+            HTML — Advanced<br>
+            CSS — Advanced<br>
+            JavaScript — Intermediate<br>
+            Git - Intermediate<br> 
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:12px;text-align:center">
+          <div style="font-size:13px" class="muted">Download resume</div>
+          <a class="btn" href="#" style="margin-top:10px;display:inline-block">Resume (PDF)</a>
+        </div>
+      </aside>
+    </main>
+
+    <footer>
+      © <span id="year"></span> Allen Paul  Apliong — Built with care • Designed for learning
+    </footer>
+  </div>
+
+  <script>
+    // small interactive bits
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    function submitContact(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+      if(!name||!email||!message){ alert('Please fill all fields.'); return }
+      // fake success
+      alert('Thanks, ' + name + '! Your message was received (demo).');
+      e.target.reset();
+    }
+
+    // smooth scroll for internal links
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', e=>{
+        const href = a.getAttribute('href');
+        if(href.length>1){
+          e.preventDefault();
+          const el = document.querySelector(href);
+          if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
+        }
+      })
+    });
+  </script>
+</body>
+</html>
